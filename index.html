@@ -15,7 +15,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="src/style.css" />
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Weather app</title>
   </head>
   <body>
@@ -23,13 +23,16 @@
       <div class="weather-app">
         <div class="search-wrapper">Search form with buttons</div>
         <div class="current-weather-wrapper">
-          <h1><i class="fa-solid fa-map-pin"></i> City</h1>
+          <h1><i class="fa-solid fa-map-pin"></i> <span id="city"></span></h1>
           <div class="row">
             <div class="col-6">
               <ul>
                 <li>day, time</li>
                 <li>date</li>
-                <li>wind</li>
+                <li>
+                  <i class="fa-solid fa-wind"></i>
+                  <span id="wind">wind</span> m/s
+                </li>
               </ul>
             </div>
             <div class="col-6">
@@ -38,12 +41,12 @@
                   src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
                   alt="sun"
                 />
-                <span class="temperature"> 20</span>
+                <span id="temperature"></span>
                 <span class="units">
                   <a href="#" id="celsius">°C</a> |
                   <a href="#" id="fahrenheit">°F</a></span
                 >
-                <span class="description"> clear</span>
+                <div id="description"></div>
               </div>
             </div>
           </div>
