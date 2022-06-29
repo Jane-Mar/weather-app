@@ -4,44 +4,58 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="stylesheet" href="src/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+    <script
+      src="https://kit.fontawesome.com/55ae98d417.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="src/style.css" />
+
     <title>Weather app</title>
   </head>
   <body>
     <div class="container">
-      <div class="search-wrapper">Search form with buttons</div>
-      <div class="current-weather-wrapper">
-        <h1>City</h1>
-        <div class="row">
-          <div class="col-6">
-            day, time <br />
-            date<br />
-            wind
-          </div>
-          <div class="col-6">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-              alt="sun"
-            />
-            20 C | F <br />
-            clear
+      <div class="weather-app">
+        <div class="search-wrapper">Search form with buttons</div>
+        <div class="current-weather-wrapper">
+          <h1><i class="fa-solid fa-map-pin"></i> City</h1>
+          <div class="row">
+            <div class="col-6">
+              <ul>
+                <li>day, time</li>
+                <li>date</li>
+                <li>wind</li>
+              </ul>
+            </div>
+            <div class="col-6">
+              <div class="today-temp">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                  alt="sun"
+                />
+                <span class="temperature"> 20</span>
+                <span class="units">
+                  <a href="#" id="celsius">°C</a> |
+                  <a href="#" id="fahrenheit">°F</a></span
+                >
+                <span class="description"> clear</span>
+              </div>
+            </div>
           </div>
         </div>
+        <div class="forecast-wrapper">forecast</div>
+        <small>
+          @2022
+          <a href="https://github.com/Jane-Mar/weather-app.git"> open-sourced</a
+          >, by Jane Marinina
+        </small>
       </div>
-      <div class="forecast-wrapper">forecast</div>
     </div>
-    <small>
-      @2022
-      <a href="https://github.com/Jane-Mar/weather-app.git"> open-sourced</a>,
-      by Jane Marinina</small
-    >
   </body>
 
   <script src="src/script.js"></script>
