@@ -71,6 +71,9 @@ small {
   font-size: 20px;
   color: #804d3b;
   margin-right: 40px;
+}
+
+#description:first-letter {
   text-transform: capitalize;
 }
 
