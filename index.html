@@ -21,7 +21,25 @@
   <body>
     <div class="container">
       <div class="weather-app">
-        <div class="search-wrapper">Search form with buttons</div>
+        <div class="search-wrapper">
+          <form id="current-location">
+            <input
+              type="search"
+              id="search-city"
+              class="form-control shadow-sm"
+              placeholder="input city"
+              style="width: 50%"
+              autocomplete="off"
+            />
+            <button class="location-btn" type="submit">
+              <i class="fa-solid fa-magnifying-glass-location"></i>
+            </button>
+            <button class="location-btn" type="submit" id="current-position">
+              <i class="fa-solid fa-location-crosshairs"></i>
+            </button>
+          </form>
+        </div>
+        <div></div>
         <div class="current-weather-wrapper">
           <h1><i class="fa-solid fa-map-pin"></i> <span id="city"></span></h1>
           <div class="row">
