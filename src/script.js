@@ -1,6 +1,9 @@
 function formatDate(timeDate) {
   let data = new Date(timeDate);
 
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let weekDay = days[data.getDay()];
+
   let hour = data.getHours();
   if (hour < 10) {
     hour = `0${hour}`;
@@ -9,15 +12,16 @@ function formatDate(timeDate) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  let weekDay = days[data.getDay()];
 
-  let year = data.getFullYear();
+  let day = data.getDate();
+  if (day < 10) {
+    day = `0${day}`;
+  }
   let month = data.getMonth() + 1;
   if (month < 10) {
     month = `0${month}`;
   }
-  let day = data.getDate();
+  let year = data.getFullYear();
 
   let currentTime = document.querySelector("#time");
   currentTime.innerHTML = `${weekDay}, ${hour}:${minutes}`;
@@ -41,6 +45,13 @@ function displayWeather(response) {
 
   let dateElement = document.querySelector("#time");
   dateElement = formatDate(response.data.dt * 1000);
+
+  let weatherIcon = document.querySelector("#icon");
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
+  );
+  weatherIcon.setAttribute("alt", `${response.data.weather[0].description}`);
 }
 
 let apiKey = "ea2c48b1c8a418ed0296eb92935bdf5a";

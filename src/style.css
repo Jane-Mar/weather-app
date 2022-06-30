@@ -2,27 +2,27 @@ h1 {
   font-size: 50px;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }
 
 i {
   color: #1297bd;
 }
 
+img {
+  height: 100px;
+}
+
 ul {
   list-style: none;
   display: block;
   margin: 0;
-  padding: 20px;
+  padding: 20px 10px 0;
 }
 
 li {
   font-size: 20px;
   color: #804d3b;
-}
-
-img {
-  vertical-align: -15px;
 }
 
 small {
@@ -50,15 +50,16 @@ small {
 
 .today-temp {
   text-align: right;
+  padding-right: 10px;
 }
 
 #temperature {
-  font-size: 50px;
+  font-size: 60px;
 }
 
 .units {
   position: relative;
-  top: -23px;
+  top: -33px;
   font-size: 15px;
 }
 
@@ -70,7 +71,8 @@ small {
 #description {
   font-size: 20px;
   color: #804d3b;
-  margin-right: 40px;
+  line-height: 1;
+  text-align: center;
 }
 
 #description:first-letter {
