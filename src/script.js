@@ -106,6 +106,33 @@ function celsiusToFarenh(event) {
   celsiusTemp.innerHTML = Math.round((currentTemp * 9) / 5 + 32);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector(".forecast-wrapper");
+
+  let days = ["Thu", "Fri", "Sat"];
+
+  let forecast = `<div class="row">`;
+  days.forEach(function (day) {
+    forecast =
+      forecast +
+      ` <div class="col-2">
+              <div class="forecast-day">${day}</div>
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                alt="forecast image"
+                class="forecast-image"
+              />
+              <div class="forecast-temp">
+                <span class="forecast-temp-day">18°</span> /
+                <span class="forecast-temp-night">12°</span>
+              </div>
+            </div>`;
+  });
+
+  forecast = forecast + ` </div>`;
+  forecastElement.innerHTML = forecast;
+}
+
 let currentTemp = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit");
@@ -115,3 +142,4 @@ let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", farenhToCelsius);
 
 loginCity("Porto");
+displayForecast();
