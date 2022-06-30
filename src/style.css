@@ -13,12 +13,6 @@ i {
   color: #1297bd;
 }
 
-img {
-  height: 100px;
-  display: block;
-  margin: 0 auto;
-}
-
 ul {
   list-style: none;
   display: block;
@@ -87,6 +81,12 @@ small {
   font-weight: bold;
 }
 
+#icon {
+  height: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
 .units {
   position: relative;
   top: -33px;
@@ -125,4 +125,24 @@ small {
   box-shadow: 2px 2px 2px 2px #804d3b;
   margin: 20px 0 10px;
   padding: 10px;
+}
+
+.forecast-day,
+.forecast-temp {
+  text-align: center;
+  color: #804d3b;
+  font-size: 14px;
+}
+
+.forecast-temp-day {
+  font-weight: bold;
+}
+
+.forecast-temp-night {
+  opacity: 0.7;
+}
+
+.forecast-image {
+  display: block;
+  margin: 0 auto;
 }
