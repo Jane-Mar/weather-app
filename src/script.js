@@ -31,7 +31,8 @@ function formatDate(timeDate) {
 
 function displayWeather(response) {
   let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = Math.round(response.data.main.temp);
+  currentTemp = response.data.main.temp;
+  temperature.innerHTML = Math.round(currentTemp);
 
   let city = document.querySelector("#city");
   city.innerHTML = response.data.name;
@@ -42,8 +43,7 @@ function displayWeather(response) {
   let description = document.querySelector("#description");
   description.innerHTML = response.data.weather[0].description;
 
-  let dateElement = document.querySelector("#time");
-  dateElement = formatDate(response.data.dt * 1000);
+  formatDate(response.data.dt * 1000);
 
   let weatherIcon = document.querySelector("#icon");
   weatherIcon.setAttribute(
@@ -53,8 +53,7 @@ function displayWeather(response) {
   weatherIcon.setAttribute("alt", `${response.data.weather[0].description}`);
 }
 
-//Login page city
-
+//Login-page city
 function loginCity(city) {
   let apiKey = "ea2c48b1c8a418ed0296eb92935bdf5a";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -89,5 +88,30 @@ function currentPosition(event) {
 
 let currentLocationBtn = document.querySelector("#current-position");
 currentLocationBtn.addEventListener("click", currentPosition);
+
+//units conversion
+function farenhToCelsius(event) {
+  event.preventDefault();
+  let fahrenheitTemp = document.querySelector("#temperature");
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  fahrenheitTemp.innerHTML = Math.round(currentTemp);
+}
+
+function celsiusToFarenh(event) {
+  event.preventDefault();
+  let celsiusTemp = document.querySelector("#temperature");
+  fahrenheitLink.classList.add("active");
+  celsiusLink.classList.remove("active");
+  celsiusTemp.innerHTML = Math.round((currentTemp * 9) / 5 + 32);
+}
+
+let currentTemp = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", celsiusToFarenh);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", farenhToCelsius);
 
 loginCity("Porto");
