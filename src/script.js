@@ -44,6 +44,7 @@ function displayWeather(response) {
   description.innerHTML = response.data.weather[0].description;
 
   formatDate(response.data.dt * 1000);
+  getForecast(response.data.coord);
 
   let weatherIcon = document.querySelector("#icon");
   weatherIcon.setAttribute(
@@ -106,7 +107,14 @@ function celsiusToFarenh(event) {
   celsiusTemp.innerHTML = Math.round((currentTemp * 9) / 5 + 32);
 }
 
-function displayForecast() {
+function getForecast(coordinates) {
+  let apiKey = "ea2c48b1c8a418ed0296eb92935bdf5a";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast/?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
   let forecastElement = document.querySelector(".forecast-wrapper");
 
   let days = ["Thu", "Fri", "Sat"];
@@ -142,4 +150,3 @@ let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", farenhToCelsius);
 
 loginCity("Porto");
-displayForecast();
