@@ -92,29 +92,6 @@ function currentPosition(event) {
 let currentLocationBtn = document.querySelector("#current-position");
 currentLocationBtn.addEventListener("click", currentPosition);
 
-//units conversion
-function farenhToCelsius(event) {
-  event.preventDefault();
-  let fahrenheitTemp = document.querySelector("#temperature");
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  fahrenheitTemp.innerHTML = Math.round(currentTemp);
-}
-
-let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", celsiusToFarenh);
-
-function celsiusToFarenh(event) {
-  event.preventDefault();
-  let celsiusTemp = document.querySelector("#temperature");
-  fahrenheitLink.classList.add("active");
-  celsiusLink.classList.remove("active");
-  celsiusTemp.innerHTML = Math.round((currentTemp * 9) / 5 + 32);
-}
-
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", farenhToCelsius);
-
 //forecast days
 function formatDay(timestamp) {
   let date = new Date(timestamp);

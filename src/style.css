@@ -25,8 +25,9 @@ li {
   color: #804d3b;
 }
 
-small {
+p {
   font-size: 12px;
+  text-align: center;
 }
 
 .weather-app {
@@ -89,24 +90,9 @@ small {
 
 .units {
   position: relative;
-  top: -33px;
-  font-size: 15px;
-}
-
-#celsius,
-#fahrenheit {
-  text-decoration: none;
-}
-
-.active {
-  color: black;
-  cursor: default;
-}
-
-.active:hover {
-  text-decoration: none;
-  color: black;
-  cursor: default;
+  top: -30px;
+  font-size: 18px;
+  color: #804d3b;
 }
 
 #description {
