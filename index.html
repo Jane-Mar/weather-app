@@ -19,70 +19,68 @@
     <title>Weather app</title>
   </head>
   <body>
-    <div class="container">
-      <div class="weather-app">
-        <div class="search-wrapper">
-          <form id="current-location">
-            <input
-              type="search"
-              id="search-city"
-              class="form-control shadow-sm"
-              placeholder="input city"
-              style="width: 65%"
-              autocomplete="off"
-            />
-            <button class="location-btn" type="submit">
-              <i class="fa-solid fa-magnifying-glass-location"></i>
-            </button>
-            <button class="location-btn" type="submit" id="current-position">
-              <i class="fa-solid fa-location-crosshairs"></i>
-            </button>
-          </form>
-        </div>
+    <div class="container weather-app">
+      <div class="search-wrapper">
+        <form id="current-location">
+          <input
+            type="search"
+            id="search-city"
+            class="form-control shadow-sm"
+            placeholder="input city"
+            style="width: 65%"
+            autocomplete="off"
+          />
+          <button class="location-btn" type="submit">
+            <i class="fa-solid fa-magnifying-glass-location"></i>
+          </button>
+          <button class="location-btn" type="submit" id="current-position">
+            <i class="fa-solid fa-location-crosshairs"></i>
+          </button>
+        </form>
+      </div>
 
-        <div class="current-weather-wrapper">
-          <h1><i class="fa-solid fa-map-pin"></i> <span id="city"></span></h1>
-          <div class="row">
-            <div class="col-4">
-              <ul>
-                <li>
-                  <i class="fa-solid fa-clock-rotate-left"></i>
-                  <span id="time"></span>
-                </li>
-                <li>
-                  <i class="fa-solid fa-calendar-check"></i>
-                  <span id="data"></span>
-                </li>
-                <li>
-                  <i class="fa-solid fa-wind"></i>
-                  <span id="wind"></span> m/s
-                </li>
-              </ul>
-            </div>
-            <div class="col-4">
-              <img src="" alt="" id="icon" />
-            </div>
-            <div class="col-4">
-              <div class="today-temp">
-                <span id="temperature"></span>
-                <span class="units"> °C </span>
-              </div>
+      <div class="current-weather-wrapper">
+        <h1><i class="fa-solid fa-map-pin"></i> <span id="city"></span></h1>
+        <div class="row">
+          <div class="col-4">
+            <ul>
+              <li>
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span id="time"></span>
+              </li>
+              <li>
+                <i class="fa-solid fa-calendar-check"></i>
+                <span id="data"></span>
+              </li>
+              <li>
+                <i class="fa-solid fa-wind"></i>
+                <span id="wind"></span> m/s
+              </li>
+            </ul>
+          </div>
+          <div class="col-4">
+            <img src="" alt="" id="icon" />
+          </div>
+          <div class="col-4">
+            <div class="today-temp">
+              <span id="temperature"></span>
+              <span class="units"> °C </span>
             </div>
           </div>
-          <div id="description"></div>
         </div>
-        <div class="forecast-wrapper"></div>
-        <p>
-          @2022
-          <a href="https://github.com/Jane-Mar/weather-app.git" target="_blank">
-            open-sourced</a
-          >, by Jane Marinina and
-          <a href="https://playful-churros-22749f.netlify.app/" target="_blank"
-            >hosted</a
-          >
-          on Netlify
-        </p>
+        <div id="description"></div>
       </div>
+      <div class="forecast-wrapper"></div>
+      <p>
+        @2022
+        <a href="https://github.com/Jane-Mar/weather-app.git" target="_blank">
+          open-sourced</a
+        >, by Jane Marinina and
+        <a href="https://playful-churros-22749f.netlify.app/" target="_blank"
+          >hosted</a
+        >
+        on Netlify
+      </p>
     </div>
   </body>
 
